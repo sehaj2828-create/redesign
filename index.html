@@ -1,0 +1,2853 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Decimal Media Consultancy</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+       /* ================================
+   MOBILE RESPONSIVE
+================================ */
+
+@media (max-width: 992px){
+
+    /* Header */
+    header{
+        padding:15px 25px;
+    }
+
+    nav{
+        gap:25px;
+    }
+
+    .hero{
+        grid-template-columns:1fr;
+        text-align:center;
+        gap:40px;
+        min-height:auto;
+        padding:140px 30px 120px;
+    }
+
+    .hero-left{
+        max-width:100%;
+    }
+
+    .hero-right{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:52px;
+        line-height:1.15;
+    }
+
+    .hero p{
+        font-size:18px;
+        max-width:100%;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+}
+@media (max-width:768px){
+
+    header{
+        padding:15px 20px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .consult-btn{
+        display:none;
+    }
+
+    .hero{
+        padding:120px 20px 100px;
+    }
+
+    .hero h1{
+        font-size:38px;
+        line-height:1.2;
+    }
+
+    .hero p{
+        font-size:16px;
+        line-height:1.8;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+        align-items:center;
+        gap:15px;
+    }
+
+    .hero-buttons a{
+        width:220px;
+        text-align:center;
+    }
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+:root{
+
+--primary:#2563eb;
+--primary-dark:#1d4ed8;
+
+--purple:#7c3aed;
+--purple-light:#a855f7;
+
+--secondary:#07142c;
+
+--text:#596780;
+
+--white:#ffffff;
+
+--light:#fbfcff;
+
+--border:#d7e4ff;
+
+--shadow:0 25px 60px rgba(16,24,40,.08);
+
+--gradient:
+linear-gradient(135deg,#2563eb,#7c3aed);
+
+--gradient2:
+linear-gradient(90deg,#2563eb,#9333ea);
+
+}
+
+/*================ RESET ================*/
+
+*{
+
+margin:0;
+padding:0;
+box-sizing:border-box;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+font-family:Inter,sans-serif;
+
+background:#fff;
+
+color:var(--text);
+
+overflow-x:hidden;
+
+line-height:1.7;
+
+}
+
+img{
+
+width:100%;
+
+display:block;
+
+}
+
+a{
+
+text-decoration:none;
+
+}
+
+ul{
+
+list-style:none;
+
+}
+
+section{
+
+padding:110px 8%;
+
+}
+
+/*================ NAVBAR ================*/
+
+header{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+
+background:rgba(255,255,255,.96);
+
+backdrop-filter:blur(18px);
+
+border-bottom:1px solid #eef2ff;
+
+z-index:999;
+
+transition:.35s;
+
+}
+
+.navbar{
+
+max-width:1400px;
+
+margin:auto;
+
+display:flex;
+
+align-items:center;
+
+justify-content:space-between;
+
+height:90px;
+
+}
+
+.logo{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+
+}
+
+.logo img{
+
+width:48px;
+
+}
+
+.logo span{
+
+font-size:24px;
+
+font-weight:700;
+
+background:var(--gradient2);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.navbar ul{
+
+display:flex;
+
+gap:38px;
+
+}
+
+.navbar ul a{
+
+font-weight:600;
+
+color:#42526e;
+
+transition:.3s;
+
+position:relative;
+
+}
+
+.navbar ul a::after{
+
+content:"";
+
+position:absolute;
+
+left:0;
+bottom:-8px;
+
+width:0;
+
+height:2px;
+
+background:var(--gradient);
+
+transition:.3s;
+
+}
+
+.navbar ul a:hover{
+
+color:var(--primary);
+
+}
+
+.navbar ul a:hover::after{
+
+width:100%;
+
+}
+
+/*================ BUTTONS ================*/
+
+.btn-nav,
+.primary{
+
+display:inline-flex;
+
+align-items:center;
+
+justify-content:center;
+
+padding:17px 34px;
+
+background:var(--gradient);
+
+color:#fff;
+
+font-weight:700;
+
+border-radius:6px;
+
+transition:.35s;
+
+box-shadow:0 12px 35px rgba(124,58,237,.22);
+
+}
+
+.btn-nav:hover,
+.primary:hover{
+
+transform:translateY(-6px);
+
+box-shadow:0 20px 45px rgba(124,58,237,.35);
+
+}
+
+.secondary{
+
+padding:17px 34px;
+
+border:2px solid transparent;
+
+background:
+
+linear-gradient(#fff,#fff) padding-box,
+
+var(--gradient) border-box;
+
+color:#2563eb;
+
+font-weight:700;
+
+border-radius:6px;
+
+transition:.35s;
+
+}
+
+.secondary:hover{
+
+background:var(--gradient);
+
+color:#fff;
+
+}
+
+/*==================================================
+            TRUSTED BRANDS
+==================================================*/
+
+.trusted{
+
+    background:#fbfcff;
+
+    text-align:center;
+
+    padding:70px 8%;
+
+}
+
+.trusted p{
+
+    color:#6b7280;
+
+    font-size:18px;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    margin-bottom:45px;
+
+}
+
+.brands{
+
+    display:grid;
+
+    grid-template-columns:repeat(5,1fr);
+
+    gap:25px;
+
+}
+
+.brands div{
+
+    position:relative;
+
+    padding:28px;
+
+    background:#fff;
+
+    text-align:center;
+
+    font-weight:700;
+
+    color:#2563eb;
+
+    letter-spacing:1px;
+
+    transition:.35s;
+
+}
+
+/* Gradient Border */
+
+.brands div::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:2px;
+
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    pointer-events:none;
+
+}
+
+.brands div:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 25px 50px rgba(124,58,237,.15);
+
+}
+
+/*==================================================
+            WHY SECTION
+==================================================*/
+
+.why-section{
+
+    max-width:1350px;
+
+    margin:auto;
+
+}
+
+.section-title{
+
+    margin-bottom:70px;
+
+}
+
+.section-title span{
+
+    display:inline-block;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+
+}
+
+.section-title h2{
+
+    font-size:58px;
+
+    line-height:1.1;
+
+    max-width:900px;
+
+    background:linear-gradient(90deg,#2563eb,#9333ea);
+
+    -webkit-background-clip:text;
+
+    -webkit-text-fill-color:transparent;
+
+}
+
+.why-item{
+
+    display:grid;
+
+    grid-template-columns:90px 1fr;
+
+    gap:35px;
+
+    align-items:flex-start;
+
+    padding:45px 0;
+
+    border-bottom:1px solid #edf2ff;
+
+}
+
+.icon{
+
+    width:75px;
+
+    height:75px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:40px;
+
+    color:#2563eb;
+
+    position:relative;
+
+    transition:.35s;
+
+}
+
+/* Gradient Border */
+
+.icon::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+padding:2px;
+
+background:linear-gradient(135deg,#2563eb,#9333ea);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+}
+
+.why-item:hover .icon{
+
+transform:rotate(90deg);
+
+color:#7c3aed;
+
+}
+
+.content h3{
+
+font-size:34px;
+
+color:#07142c;
+
+margin-bottom:18px;
+
+}
+
+.content p{
+
+font-size:19px;
+
+line-height:1.9;
+
+color:#64748b;
+
+max-width:900px;
+
+}
+
+/*==================================================
+          PARTNER SECTION
+==================================================*/
+
+.partner-section{
+
+display:grid;
+
+grid-template-columns:360px 1fr;
+
+gap:80px;
+
+align-items:start;
+
+}
+
+.partner-card{
+
+position:sticky;
+
+top:130px;
+
+padding:45px;
+
+background:#fff;
+
+box-shadow:0 30px 60px rgba(0,0,0,.06);
+
+transition:.35s;
+
+position:relative;
+
+}
+
+/* Gradient Outline */
+
+.partner-card::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+padding:2px;
+
+background:linear-gradient(135deg,#2563eb,#9333ea);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+pointer-events:none;
+
+}
+
+.partner-card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.small-text{
+
+display:inline-block;
+
+font-size:13px;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#2563eb;
+
+margin-bottom:18px;
+
+text-transform:uppercase;
+
+}
+
+.partner-card h2{
+
+font-size:36px;
+
+line-height:1.2;
+
+margin-bottom:20px;
+
+color:#07142c;
+
+}
+
+.partner-card p{
+
+font-size:18px;
+
+color:#64748b;
+
+margin-bottom:30px;
+
+line-height:1.8;
+
+}
+
+.partner-btn{
+
+display:inline-block;
+
+padding:16px 30px;
+
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+
+color:#fff;
+
+font-weight:700;
+
+transition:.35s;
+
+}
+
+.partner-btn:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 18px 40px rgba(124,58,237,.25);
+
+}
+
+.section-tag{
+
+display:inline-block;
+
+color:#2563eb;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+margin-bottom:18px;
+
+}
+
+.partner-right h2{
+
+font-size:58px;
+
+line-height:1.15;
+
+margin-bottom:30px;
+
+color:#07142c;
+
+}
+
+.partner-right p{
+
+font-size:19px;
+
+line-height:1.9;
+
+margin-bottom:26px;
+
+color:#64748b;
+
+}
+
+.partner-features{
+
+display:grid;
+
+grid-template-columns:repeat(3,1fr);
+
+gap:22px;
+
+margin-top:40px;
+
+}
+
+.feature-box{
+
+position:relative;
+
+padding:28px;
+
+background:#fff;
+
+transition:.35s;
+
+text-align:center;
+
+}
+
+/* Gradient Border */
+
+.feature-box::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+padding:2px;
+
+background:linear-gradient(135deg,#2563eb,#9333ea);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+}
+
+.feature-box i{
+
+font-size:34px;
+
+margin-bottom:18px;
+
+display:block;
+
+background:linear-gradient(135deg,#2563eb,#9333ea);
+
+-webkit-background-clip:text;
+
+-webkit-text-fill-color:transparent;
+
+}
+
+.feature-box span{
+
+font-weight:700;
+
+color:#07142c;
+
+}
+
+.feature-box:hover{
+
+transform:translateY(-10px);
+
+box-shadow:0 25px 55px rgba(124,58,237,.18);
+
+}
+/*==================================================
+                CTA SECTION
+==================================================*/
+
+.cta{
+
+    padding:120px 8%;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(37,99,235,.08),
+    transparent 40%),
+
+    radial-gradient(circle at bottom right,
+    rgba(124,58,237,.08),
+    transparent 35%),
+
+    #fff;
+
+}
+
+.cta-content{
+
+    position:relative;
+
+    padding:90px 70px;
+
+    text-align:center;
+
+    background:#fff;
+
+    overflow:hidden;
+
+}
+
+/* Gradient Border */
+
+.cta-content::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+padding:2px;
+
+background:linear-gradient(135deg,#2563eb,#9333ea);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+pointer-events:none;
+
+}
+
+.cta-content h2{
+
+font-size:56px;
+
+line-height:1.15;
+
+color:#07142c;
+
+margin-bottom:25px;
+
+}
+
+.cta-content p{
+
+font-size:21px;
+
+max-width:700px;
+
+margin:auto;
+
+margin-bottom:40px;
+
+color:#64748b;
+
+line-height:1.8;
+
+}
+
+.cta-content .primary{
+
+font-size:18px;
+
+padding:18px 42px;
+
+}
+
+/*==================================================
+                CONTACT
+==================================================*/
+
+.contact{
+
+display:grid;
+
+grid-template-columns:420px 1fr;
+
+gap:80px;
+
+align-items:start;
+
+}
+
+.contact-left span{
+
+display:inline-block;
+
+font-weight:700;
+
+letter-spacing:2px;
+
+color:#2563eb;
+
+margin-bottom:18px;
+
+}
+
+.contact-left h2{
+
+font-size:54px;
+
+line-height:1.15;
+
+color:#07142c;
+
+margin-bottom:25px;
+
+}
+
+.contact-left p{
+
+font-size:19px;
+
+line-height:1.9;
+
+color:#64748b;
+
+}
+
+.contact-form{
+
+position:relative;
+
+background:#fff;
+
+padding:50px;
+
+}
+
+/* Gradient Border */
+
+.contact-form::before{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+padding:2px;
+
+background:linear-gradient(135deg,#2563eb,#9333ea);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+
+mask-composite:exclude;
+
+pointer-events:none;
+
+}
+
+.contact-form input,
+.contact-form textarea{
+
+width:100%;
+
+padding:18px 22px;
+
+margin-bottom:22px;
+
+font-size:16px;
+
+font-family:inherit;
+
+background:#fff;
+
+border:1px solid #e5e7eb;
+
+outline:none;
+
+transition:.3s;
+
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus{
+
+border-color:#7c3aed;
+
+box-shadow:0 0 0 4px rgba(124,58,237,.10);
+
+}
+
+.contact-form textarea{
+
+min-height:180px;
+
+resize:vertical;
+
+}
+
+.contact-form button{
+
+width:100%;
+
+padding:18px;
+
+font-size:17px;
+
+font-weight:700;
+
+border:none;
+
+cursor:pointer;
+
+background:linear-gradient(135deg,#2563eb,#7c3aed);
+
+color:#fff;
+
+transition:.35s;
+
+}
+
+.contact-form button:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 20px 40px rgba(124,58,237,.25);
+
+}
+
+/*==================================================
+                    FOOTER
+==================================================*/
+
+footer{
+
+background:#07142c;
+
+padding:90px 8% 35px;
+
+}
+
+.footer-top{
+
+display:grid;
+
+grid-template-columns:2fr 1fr 1fr 1fr;
+
+gap:60px;
+
+margin-bottom:60px;
+
+}
+
+.footer-top h3,
+.footer-top h4{
+
+color:#fff;
+
+margin-bottom:20px;
+
+}
+
+.footer-top p{
+
+color:#b8c3d8;
+
+line-height:1.9;
+
+}
+
+.footer-top a{
+
+display:block;
+
+margin-bottom:14px;
+
+color:#b8c3d8;
+
+transition:.3s;
+
+}
+
+.footer-top a:hover{
+
+color:#a855f7;
+
+transform:translateX(6px);
+
+}
+
+.footer-bottom{
+
+border-top:1px solid rgba(255,255,255,.1);
+
+padding-top:30px;
+
+text-align:center;
+
+color:#94a3b8;
+
+font-size:15px;
+
+}
+
+/*==================================================
+             SOCIAL ICONS
+==================================================*/
+
+.footer-top i{
+
+width:42px;
+
+height:42px;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:#111d36;
+
+font-size:18px;
+
+transition:.35s;
+
+}
+
+.footer-top i:hover{
+
+background:linear-gradient(135deg,#2563eb,#9333ea);
+
+color:#fff;
+
+transform:translateY(-5px);
+
+}
+
+/*==================================================
+               RESPONSIVE
+==================================================*/
+
+@media(max-width:1100px){
+
+.hero,
+.partner-section,
+.contact{
+
+grid-template-columns:1fr;
+
+gap:60px;
+
+}
+
+.partner-card{
+
+position:relative;
+
+top:0;
+
+}
+
+.partner-features{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.brands{
+
+grid-template-columns:repeat(3,1fr);
+
+}
+
+.footer-top{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.hero h1{
+
+font-size:52px;
+
+}
+
+.partner-right h2,
+.contact-left h2,
+.cta-content h2{
+
+font-size:42px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+section{
+
+padding:80px 6%;
+
+}
+
+.hero{
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.stats{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+}
+
+.brands{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+.why-item{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.partner-features{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-top{
+
+grid-template-columns:1fr;
+
+}
+
+.contact-form{
+
+padding:30px;
+
+}
+
+.hero h1{
+
+font-size:40px;
+
+}
+
+.hero h2{
+
+font-size:20px;
+
+}
+
+.partner-right h2,
+.contact-left h2,
+.cta-content h2{
+
+font-size:34px;
+
+}
+
+}
+
+
+.premium-card{
+
+    position:relative;
+
+    background:#fff;
+
+    padding:40px;
+
+    overflow:hidden;
+
+    transition:.35s ease;
+
+}
+
+.premium-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:2px;
+
+    background:linear-gradient(
+    135deg,
+    #2563eb,
+    #7c3aed
+    );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    pointer-events:none;
+
+}
+
+.premium-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 20px 45px rgba(37,99,235,.08);
+
+}
+
+/*==================================================
+                SECTION HEADINGS
+==================================================*/
+
+.section-heading{
+
+    max-width:750px;
+
+    margin-bottom:70px;
+
+}
+
+.section-heading span{
+
+    display:inline-block;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:3px;
+
+    color:#2563eb;
+
+    margin-bottom:20px;
+
+    text-transform:uppercase;
+
+}
+
+.section-heading h2{
+
+    font-size:58px;
+
+    line-height:1.1;
+
+    color:#07142c;
+
+    margin-bottom:25px;
+
+}
+
+.section-heading p{
+
+    font-size:19px;
+
+    color:#64748b;
+
+    line-height:1.9;
+
+}
+
+/*==================================================
+                FEATURE GRID
+==================================================*/
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:35px;
+
+}
+
+.feature-item{
+
+    position:relative;
+
+    background:#fff;
+
+    padding:45px 35px;
+
+    transition:.35s;
+
+}
+
+.feature-item::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    padding:2px;
+
+    background:linear-gradient(135deg,#2563eb,#7c3aed);
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+}
+
+.feature-item i{
+
+    font-size:42px;
+
+    margin-bottom:30px;
+
+    color:#2563eb;
+
+}
+
+.feature-item h3{
+
+    font-size:28px;
+
+    color:#07142c;
+
+    margin-bottom:18px;
+
+}
+
+.feature-item p{
+
+    color:#64748b;
+
+    line-height:1.9;
+
+}
+
+.feature-item:hover{
+
+    transform:translateY(-10px);
+
+}
+
+/*==================================================
+            GRADIENT OUTLINE BUTTON
+==================================================*/
+
+.outline-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:18px 34px;
+
+    border:2px solid transparent;
+
+    background:
+
+    linear-gradient(#fff,#fff) padding-box,
+
+    linear-gradient(135deg,#2563eb,#7c3aed) border-box;
+
+    color:#2563eb;
+
+    font-weight:700;
+
+    transition:.35s;
+
+}
+
+.outline-btn:hover{
+
+    background:
+
+    linear-gradient(135deg,#2563eb,#7c3aed);
+
+    color:#fff;
+
+}
+
+/*==================================================
+                IMAGE FRAME
+==================================================*/
+
+.image-frame{
+
+    position:relative;
+
+    padding:8px;
+
+    background:
+
+    linear-gradient(135deg,#2563eb,#7c3aed);
+
+}
+
+.image-frame img{
+
+    display:block;
+
+    width:100%;
+
+    background:#fff;
+
+}
+
+/*==================================================
+                DIVIDER
+==================================================*/
+
+.section-divider{
+
+    width:100%;
+
+    height:1px;
+
+    background:linear-gradient(
+
+        to right,
+
+        transparent,
+
+        #2563eb,
+
+        #7c3aed,
+
+        transparent
+
+    );
+
+    margin:90px 0;
+
+}
+/*==================================================
+            HERO IMAGE STYLING
+==================================================*/
+
+/*==================================================
+                    HERO SECTION
+==================================================*/
+/* ================= HERO ================= */
+
+
+    .hero{
+    position: relative;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 60px;
+
+    padding: 90px 8% 60px;
+
+    background-image:
+        linear-gradient(
+            rgba(8,18,45,.45),
+            rgba(8,18,45,.45)
+        ),
+        url("hero-bg.png");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+
+    height: 600px;          /* FIXED HEIGHT */
+    overflow: hidden;
+}
+
+/* Bottom Smooth Double Wave */
+
+.hero::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:0;
+
+    width:100%;
+    height:120px;
+
+    background:#fff;
+
+    clip-path: polygon(
+        0 70%,
+        20% 58%,
+        42% 72%,
+        65% 52%,
+        100% 65%,
+        100% 100%,
+        0 100%
+    );
+}
+/* ================= HERO WAVE ================= */
+
+.hero::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 120px;
+    background: #ffffff;
+
+    clip-path: polygon(
+        0 68%,
+        18% 58%,
+        38% 72%,
+        60% 48%,
+        82% 66%,
+        100% 55%,
+        100% 100%,
+        0 100%
+    );
+}
+/* Hero ends here */
+
+.hero + *{
+    position: relative;
+    background: #ffffff;
+    margin-top: -2px;
+    z-index: 2;
+}
+/*==================================================
+            BUTTON ANIMATION
+==================================================*/
+
+.primary,
+.secondary,
+.partner-btn,
+.btn-nav{
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+.primary::after,
+.secondary::after,
+.partner-btn::after,
+.btn-nav::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:-120%;
+    top:0;
+
+    width:80%;
+    height:100%;
+
+    background:rgba(255,255,255,.25);
+
+    transform:skewX(-25deg);
+
+    transition:.6s;
+
+}
+
+.primary:hover::after,
+.secondary:hover::after,
+.partner-btn:hover::after,
+.btn-nav:hover::after{
+
+    left:130%;
+
+}
+
+/*==================================================
+            SECTION SPACING
+==================================================*/
+
+section{
+
+    padding:120px 8%;
+
+}
+
+section:nth-child(even){
+
+    background:#fbfcff;
+
+}
+
+/*==================================================
+            TITLE UNDERLINE
+==================================================*/
+
+.section-title h2,
+.partner-right h2,
+.contact-left h2,
+.cta-content h2{
+
+    position:relative;
+
+}
+
+.section-title h2::after,
+.partner-right h2::after,
+.contact-left h2::after,
+.cta-content h2::after{
+
+    content:"";
+
+    display:block;
+
+    width:90px;
+    height:4px;
+
+    margin-top:18px;
+
+    background:linear-gradient(
+        90deg,
+        #2563eb,
+        #7c3aed
+    );
+
+}
+
+/*==================================================
+            SIMPLE HOVER LINKS
+==================================================*/
+
+a{
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    color:#7c3aed;
+
+}
+
+/*==================================================
+            ICON CIRCLE
+==================================================*/
+
+.feature-box i,
+.icon{
+
+    transition:.35s;
+
+}
+
+.feature-box:hover i{
+
+    transform:rotate(-10deg) scale(1.15);
+
+}
+
+/*==================================================
+            CUSTOM SCROLLBAR
+==================================================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#eef2ff;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:linear-gradient(
+        #2563eb,
+        #7c3aed
+    );
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#2563eb;
+
+}
+
+/*==================================================
+            FOOTER IMPROVEMENTS
+==================================================*/
+
+.footer-top{
+
+    align-items:flex-start;
+
+}
+
+.footer-top h4{
+
+    font-size:20px;
+
+}
+
+.footer-top a{
+
+    width:max-content;
+
+}
+
+.footer-bottom{
+
+    letter-spacing:1px;
+
+}
+
+/*==================================================
+            IMAGE HOVER
+==================================================*/
+
+.about-image img,
+.image-frame img{
+
+    transition:.5s;
+
+}
+
+.about-image:hover img,
+.image-frame:hover img{
+
+    transform:scale(1.03);
+
+}
+
+/*==================================================
+            RESPONSIVE
+==================================================*/
+
+@media(max-width:900px){
+
+.hero{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+.hero-buttons{
+
+justify-content:center;
+
+}
+
+.stats{
+
+justify-content:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+}
+
+.partner-section{
+
+grid-template-columns:1fr;
+
+}
+
+.partner-features{
+
+grid-template-columns:1fr;
+
+}
+
+.contact{
+
+grid-template-columns:1fr;
+
+}
+
+.footer-top{
+
+grid-template-columns:1fr;
+
+gap:40px;
+
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+
+font-size:38px;
+
+}
+
+.hero h2{
+
+font-size:19px;
+
+}
+
+.section-title h2,
+.partner-right h2,
+.contact-left h2,
+.cta-content h2{
+
+font-size:32px;
+
+}
+
+.feature-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.brands{
+
+grid-template-columns:1fr 1fr;
+
+}
+
+}
+/* HERO TEXT */
+
+.hero-left h1{
+    font-size: 5rem !important;
+    font-weight: 800;
+    color: #ffffff !important;
+    line-height: 1.1;
+    max-width: 900px;
+    margin-bottom: 25px;
+    text-shadow: 0 3px 8px rgba(0,0,0,.3);
+}
+
+.hero-left h2{
+    font-size: 1.5rem !important;
+    color: rgba(255,255,255,.92) !important;
+    line-height: 1.7;
+}
+
+.hero-left .tag{
+    color: #ffffff !important;
+    font-weight: 700;
+}
+/* ==========================
+   Mobile Hero
+========================== */
+
+@media (max-width: 768px) {
+
+    .hero {
+        padding: 120px 20px 80px;
+        min-height: auto;
+    }
+
+    .hero-left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 46px;
+        line-height: 1.15;
+        max-width: 100%;
+        word-break: normal;
+        overflow-wrap: break-word;
+        margin: 20px auto;
+    }
+
+    .hero p {
+        font-size: 17px;
+        line-height: 1.7;
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .hero-buttons a {
+        width: 220px;
+        text-align: center;
+    }
+
+    .hero-right {
+        display: none;
+    }
+}
+/* Desktop */
+
+.menu-icon{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+    color:#1f2d4d;
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+    header{
+        padding:15px 20px;
+        display:flex;
+        justify-content:space-between;
+        align-items:center;
+    }
+
+    .logo h2{
+        font-size:32px;
+    }
+
+    .logo img{
+        width:45px;
+    }
+
+    .consult-btn{
+        display:none;
+    }
+
+    .menu-icon{
+        display:block;
+    }
+
+    nav{
+        position:absolute;
+        top:100%;
+        left:0;
+        width:100%;
+        background:#fff;
+        display:none;
+        flex-direction:column;
+        align-items:center;
+        padding:20px 0;
+        box-shadow:0 8px 25px rgba(0,0,0,.1);
+        gap:20px;
+        z-index:999;
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    nav a{
+        font-size:18px;
+    }
+
+    .mobile-btn{
+        display:inline-block;
+        background:linear-gradient(90deg,#3b82f6,#7c3aed);
+        color:#fff;
+        padding:12px 28px;
+        border-radius:8px;
+    }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<img src="hero-bg.png" width="500">
+<!-- ================= NAVBAR ================= -->
+
+<header>
+
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+        <h2>Decimal Media</h2>
+    </div>
+
+    <nav id="navbar">
+        <a href="#">Home</a>
+        <a href="#">Services</a>
+        <a href="#">Solutions</a>
+        <a href="#">Case Studies</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#" class="mobile-btn">Book Consultation</a>
+    </nav>
+
+    <a href="#" class="consult-btn">Book Consultation</a>
+
+    <div class="menu-icon" onclick="toggleMenu()">
+        ☰
+    </div>
+
+</header>
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<div class="hero-left">
+
+<p class="tag">
+
+Healthcare Marketing Agency
+
+</p>
+
+<h1>
+
+Elevating Your Brand With Full-Spectrum Markecting Solutions.
+
+</h1>
+
+<h2>
+    Innovative End-to-End Marketing and Consulting for Long-Term Business Success
+</h2>
+<div class="hero-buttons">
+
+<a href="#" class="primary">
+
+Get Started
+
+</a>
+
+<a href="#" class="secondary">
+
+Our Services
+
+</a>
+
+</div>
+
+
+
+
+</div>
+
+<div class="hero-right">
+
+<img src="hero-image.png">
+
+</div>
+
+</section>
+<section class="why-section">
+
+    <div class="section-title">
+        <span>WHY CHOOSE DECIMAL MEDIA</span>
+        <h2>Helping Businesses Grow Through Smart Digital Marketing</h2>
+    </div>
+
+    <div class="why-item">
+
+        <div class="icon">+</div>
+
+        <div class="content">
+
+            <h3>Empower Your Brand & Customers</h3>
+
+            <p>
+                We help businesses connect with their target audience through
+                strategic digital marketing, branding, SEO, and engaging
+                content that builds trust and long-term customer relationships.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="why-item">
+
+        <div class="icon">+</div>
+
+        <div class="content">
+
+            <h3>Integrated Marketing Strategies</h3>
+
+            <p>
+                Our team combines SEO, paid advertising, social media,
+                website development, branding, and analytics into one
+                powerful strategy that delivers measurable business growth.
+            </p>
+
+        </div>
+
+    </div>
+
+    <div class="why-item">
+
+        <div class="icon">+</div>
+
+        <div class="content">
+
+            <h3>Experienced Digital Marketing Specialists</h3>
+
+            <p>
+                From healthcare and education technology to SaaS and
+                product-based businesses, our specialists create
+                customized marketing solutions designed to increase
+                visibility, generate quality leads, and maximize ROI.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= TRUSTED ================= -->
+
+<section class="trusted">
+
+<p>
+
+Trusted by Healthcare Organizations & Growing Brands
+
+</p>
+
+<div class="brands">
+
+<div>CLIENT</div>
+
+<div>CLIENT</div>
+
+<div>CLIENT</div>
+
+<div>CLIENT</div>
+
+<div>CLIENT</div>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT PREVIEW ================= -->
+
+<section class="about-preview">
+
+<div class="about-image">
+
+<img src="office.jpg">
+
+</div>
+
+<div class="about-content">
+<section class="partner-section">
+
+    <div class="partner-left">
+
+        <div class="partner-card">
+
+            <span class="small-text">
+                LET'S GROW YOUR BUSINESS
+            </span>
+
+            <h2>
+                Find Out How We Can Help You
+            </h2>
+
+            <p>
+                Discover marketing strategies tailored to your business goals.
+            </p>
+
+            <a href="#contact" class="partner-btn">
+                Book a Consultation
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="partner-right">
+
+        <span class="section-tag">
+            WHY DECIMAL MEDIA
+        </span>
+
+        <h2>
+            Your Trusted Digital Growth Partner
+        </h2>
+
+        <p>
+            We help businesses build stronger brands through strategic
+            marketing, creative design, SEO, paid advertising, social
+            media, and performance-driven campaigns.
+        </p>
+
+        <p>
+            Our experienced team develops customized marketing strategies
+            that increase visibility, attract quality leads, and create
+            sustainable business growth across healthcare, education,
+            SaaS, and other industries.
+        </p>
+
+        <p>
+            Whether you're launching a new brand or scaling an existing
+            business, we're committed to delivering measurable results
+            that help you stay ahead in today's digital landscape.
+        </p>
+
+        <div class="partner-features">
+
+            <div class="feature-box">
+                <i class="fas fa-chart-line"></i>
+                <span>Growth Focused</span>
+            </div>
+
+            <div class="feature-box">
+                <i class="fas fa-users"></i>
+                <span>Expert Team</span>
+            </div>
+
+            <div class="feature-box">
+                <i class="fas fa-lightbulb"></i>
+                <span>Creative Strategy</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<a href="#">
+
+Learn More →
+
+</a>
+
+</div>
+
+</section>
+
+<!-- ================= CTA ================= -->
+
+<section class="cta">
+
+    <div class="cta-content">
+
+        <h2>
+
+            Ready to Grow Your Healthcare Brand?
+
+        </h2>
+
+        <p>
+
+            Let's create a marketing strategy that delivers measurable results.
+
+        </p>
+
+        <a href="#" class="primary">
+
+            Schedule Consultation
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact">
+
+    <div class="contact-left">
+
+        <span>CONTACT US</span>
+
+        <h2>Let's Talk About Your Next Project</h2>
+
+        <p>
+
+            We'd love to learn more about your organization and
+            discuss how we can help accelerate your growth.
+
+        </p>
+
+    </div>
+
+    <form class="contact-form">
+
+        <input type="text" placeholder="Your Name">
+
+        <input type="email" placeholder="Email Address">
+
+        <input type="text" placeholder="Company">
+
+        <textarea placeholder="Tell us about your project"></textarea>
+
+        <button type="submit">
+
+            Send Message
+
+        </button>
+
+    </form>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-top">
+
+        <div>
+
+            <h3>Decimal Media Consultancy</h3>
+
+            <p>
+
+                Helping healthcare brands grow through strategy,
+                technology, and digital marketing.
+
+            </p>
+
+        </div>
+
+        <div>
+
+            <h4>Company</h4>
+
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Portfolio</a>
+            <a href="#">Contact</a>
+
+        </div>
+
+        <div>
+
+            <h4>Services</h4>
+
+            <a href="#">SEO</a>
+            <a href="#">Branding</a>
+            <a href="#">Web Design</a>
+            <a href="#">Advertising</a>
+
+        </div>
+
+        <div>
+
+            <h4>Follow</h4>
+
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Decimal Media Consultancy. All Rights Reserved.
+
+    </div>
+
+</footer>
+<script>
+    /* ==========================================
+   STICKY NAVBAR
+========================================== */
+
+const header = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    if (window.scrollY > 60) {
+        header.style.boxShadow = "0 10px 30px rgba(0,0,0,.08)";
+        header.style.background = "rgba(255,255,255,.98)";
+    } else {
+        header.style.boxShadow = "none";
+        header.style.background = "rgba(255,255,255,.94)";
+    }
+});
+
+/* ==========================================
+   SMOOTH SCROLL
+========================================== */
+
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if (target) {
+            e.preventDefault();
+
+            target.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
+
+    });
+
+});
+
+/* ==========================================
+   SCROLL REVEAL
+========================================== */
+
+const reveals = document.querySelectorAll(
+".service-card,.portfolio-card,.testimonial,.counter,.feature,.about-image,.why-right,.contact-form"
+);
+
+function revealElements(){
+
+    const trigger = window.innerHeight * 0.85;
+
+    reveals.forEach(item=>{
+
+        const top = item.getBoundingClientRect().top;
+
+        if(top < trigger){
+
+            item.style.opacity = "1";
+            item.style.transform = "translateY(0px)";
+
+        }
+
+    });
+
+}
+
+reveals.forEach(item=>{
+
+    item.style.opacity="0";
+    item.style.transform="translateY(40px)";
+    item.style.transition=".8s ease";
+
+});
+
+window.addEventListener("scroll", revealElements);
+window.addEventListener("load", revealElements);
+
+/* ==========================================
+   COUNTER ANIMATION
+========================================== */
+
+const counters=document.querySelectorAll(".counter h2");
+
+let counterStarted=false;
+
+function animateCounters(){
+
+const section=document.querySelector(".counter-section");
+
+if(!section) return;
+
+const top=section.getBoundingClientRect().top;
+
+if(top<window.innerHeight-150 && !counterStarted){
+
+counterStarted=true;
+
+counters.forEach(counter=>{
+
+const target=parseInt(counter.innerText);
+
+let current=0;
+
+const increment=Math.ceil(target/120);
+
+const update=()=>{
+
+current+=increment;
+
+if(current>=target){
+
+counter.innerText=target+"+";
+
+return;
+
+}
+
+counter.innerText=current+"+";
+
+requestAnimationFrame(update);
+
+};
+
+update();
+
+});
+
+}
+
+}
+
+window.addEventListener("scroll",animateCounters);
+window.addEventListener("load",animateCounters);
+
+/* ==========================================
+   ACTIVE NAVIGATION
+========================================== */
+
+const sections=document.querySelectorAll("section");
+const navLinks=document.querySelectorAll(".navbar ul li a");
+
+window.addEventListener("scroll",()=>{
+
+let current="";
+
+sections.forEach(section=>{
+
+const top=section.offsetTop-150;
+
+if(pageYOffset>=top){
+
+current=section.getAttribute("id");
+
+}
+
+});
+
+navLinks.forEach(link=>{
+
+link.classList.remove("active");
+
+if(link.getAttribute("href")==="#"+current){
+
+link.classList.add("active");
+
+}
+
+});
+
+});
+
+/* ==========================================
+   CONTACT FORM
+========================================== */
+
+const form=document.querySelector(".contact-form");
+
+if(form){
+
+form.addEventListener("submit",(e)=>{
+
+e.preventDefault();
+
+const inputs=form.querySelectorAll("input,textarea");
+
+let valid=true;
+
+inputs.forEach(input=>{
+
+if(input.value.trim()===""){
+
+input.style.borderColor="red";
+
+valid=false;
+
+}else{
+
+input.style.borderColor="#e7eef8";
+
+}
+
+});
+
+if(valid){
+
+alert("Thank you! Your message has been sent.");
+
+form.reset();
+
+}
+
+});
+
+}
+
+/* ==========================================
+   SCROLL TO TOP BUTTON
+========================================== */
+
+const topBtn=document.createElement("button");
+
+topBtn.innerHTML="↑";
+
+topBtn.style.position="fixed";
+topBtn.style.right="25px";
+topBtn.style.bottom="25px";
+topBtn.style.width="50px";
+topBtn.style.height="50px";
+topBtn.style.border="none";
+topBtn.style.borderRadius="50%";
+topBtn.style.background="#1d4ed8";
+topBtn.style.color="#fff";
+topBtn.style.fontSize="22px";
+topBtn.style.cursor="pointer";
+topBtn.style.display="none";
+topBtn.style.zIndex="9999";
+topBtn.style.boxShadow="0 15px 35px rgba(0,0,0,.2)";
+
+document.body.appendChild(topBtn);
+
+window.addEventListener("scroll",()=>{
+
+topBtn.style.display=window.scrollY>400?"block":"none";
+
+});
+
+topBtn.addEventListener("click",()=>{
+
+window.scrollTo({
+
+top:0,
+behavior:"smooth"
+
+});
+
+});
+
+/* ==========================================
+   OPTIONAL MOBILE MENU
+========================================== */
+
+const menuBtn=document.querySelector(".menu-toggle");
+const nav=document.querySelector(".navbar ul");
+
+if(menuBtn){
+
+menuBtn.addEventListener("click",()=>{
+
+nav.classList.toggle("show");
+
+});
+
+}
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("active");
+}
+</script>
+
+</body>
+
+</html>
